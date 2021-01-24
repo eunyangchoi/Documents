@@ -1,0 +1,13 @@
+
+stages:
+- build
+
+build:
+  stage: build
+  image: maven:3-jdk-11-slim
+  script:
+     - mvn clean install -DskipTests
+ 
+  artifacts:
+     paths:
+        - webgoat-server/target/webgoat-server-v8.2.0-SNAPSHOT.jar
